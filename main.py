@@ -8,7 +8,7 @@
 import openai
 
 # Connection Key to openAI
-openai.api_key = "mykey"  # add your own key - go to web and generate one
+openai.api_key = "key"  # add your own key - go to web and generate one
 
 
 # FUNCTIONS
@@ -16,9 +16,11 @@ def chat_with_bot(question1):
     """Function takes question and returns answer of ChatGPT"""
     answer = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": question1}]
+        messages=[
+            {"role": "user", "content": question1}
+        ]
     )
-    return answer.choices[0].message.content.strip()
+    return answer.choices[0]['message']['content']
 
 
 # MAIN LOOP
