@@ -26,7 +26,7 @@ def chat_with_bot(question1):
 # MAIN LOOP
 if __name__ == "__main__":
     while True:
-        question = input("You :")
-        if question.lower() in ["quit", "exit"]:
+        question = input("Ty : ")
+        if question.lower() in ["koniec", "exit"]:
             break
-        print("ChatBot :", chat_with_bot(question))
+        print("Počítač : ", chat_with_bot(question))
